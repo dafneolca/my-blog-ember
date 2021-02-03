@@ -1,0 +1,13 @@
+<Input @value={{this.newTitle}} @enter={{fn this.addPost}} />
+
+<ul>
+  {{#each @model as |post|}}
+  <li>
+    <LinkTo @route="posts.post" @model={{post.id}}>
+      <PostView @post={{post}} @showBody={{false}} />
+    </LinkTo>
+  </li>
+  {{/each}}
+</ul>
+
+{{outlet}}
